@@ -10,7 +10,14 @@ public class Main {
 		System.out.println("Podaj parametry gry:");
 		System.out.println("- Multiplayer = 1, Singleplayer = 2");
 		Scanner in = new Scanner(System.in);
-		boolean isComputer = in.nextBoolean();
+		int gameType = in.nextInt();
+		boolean isComputer;
+		if(gameType==1){
+		isComputer = true;
+		}
+		else{
+			isComputer = false;
+		}
 		System.out.println("- Podaj ilosc pol:");
 		int boardSize = in.nextInt();
 		System.out.println("- Podaj ilosc pol do wygrania:");
