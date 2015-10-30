@@ -1,8 +1,8 @@
 
 public class GameParams {
-	int boardSize;
-	int fieldsToWin;
-	boolean isComputer;
+	public int boardSize;
+	public int fieldsToWin;
+	public boolean isComputer;
 
 	public GameParams(int boardSize, int fieldsToWin, boolean isComputer) {
 		super();

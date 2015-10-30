@@ -4,7 +4,8 @@ public class Board {
 	private char[][] gameBoard;
 	public int size;
 
-	public boolean setField(Player player, Position position) {
+	public boolean setField(Player player, Position position) {//////ZWRACA TRUE LUB FALSE W ZALEZNOSCI OD TEGO CZY KTOS DOBRZE ZAZNACZYL
+		//////////tutaj bedzie caly algorytm sprawdzenie czy dobrze ktos zaznaczyl
 		if (gameBoard[position.x][position.y] == 0) {
 			if (player.getId() == 1) {
 				gameBoard[position.x][position.y] = 'X';
@@ -16,15 +17,15 @@ public class Board {
 		}
 
 		else {
-			System.out.println("Zle zaznaczyles pole");
+			
 			return false;
 		}
 		/////// dokonczyc
 	}
 
 	public void clearBoard() {
-		for (int i = 0; i < gameBoard[i].length; i++) {
-			for (int j = 0; j < gameBoard[j].length; j++) {
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
 				gameBoard[i][j] = 0;
 			}
 		}

@@ -21,9 +21,13 @@ public class Game {
 	}
 	
 	public boolean makeMoveAndCheckWin(Player player){
-		player.makeMove();
+		Position position = player.makeMove();
 		///sprawdz czy wygral
-	 
+		while(!board.setField(player, position)){
+			System.out.println("Wprowadzono chujowe dane");
+			position = player.makeMove();
+		}
+		
         return board.isPlayerWin(player);
 	}
 	
