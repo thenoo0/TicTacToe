@@ -5,29 +5,33 @@ public class Board {
 	public int size;
 
 	public boolean setField(Player player, Position position) {////// ZWRACA
-																////// TRUE LUB
-																////// FALSE W
-																////// ZALEZNOSCI
-																////// OD TEGO
-																////// CZY KTOS
-																////// DOBRZE
-																////// ZAZNACZYL
+		////// TRUE LUB
+		////// FALSE W
+		////// ZALEZNOSCI
+		////// OD TEGO
+		////// CZY KTOS
+		////// DOBRZE
+		////// ZAZNACZYL
 		////////// tutaj bedzie caly algorytm sprawdzenie czy dobrze ktos
 		////////// zaznaczyl
-		if (gameBoard[position.x][position.y] == 0) {
-			if (player.getId() == 1) {
-				gameBoard[position.x][position.y] = 1;
-				return true;
-			} else {
-				gameBoard[position.x][position.y] = 2;
-				return true;
+		if (position.x < size && position.y < size) {
+
+			if (gameBoard[position.x][position.y] == 0) {
+				if (player.getId() == 1) {
+					gameBoard[position.x][position.y] = 1;
+					return true;
+				} else {
+					gameBoard[position.x][position.y] = 2;
+					return true;
+				}
 			}
-		}
 
-		else {
+			else {
 
+				return false;
+			}
+		} else
 			return false;
-		}
 		/////// dokonczyc
 	}
 
@@ -41,17 +45,17 @@ public class Board {
 
 	public boolean isPlayerWin(Player player) {
 
-//		if (checkHorizontalWin(player)) {
-//			return true;
-//		}
-//
-//		if (checkVerticalWin(player)) {
-//			return true;
-//		}
-//
-//		if (checkDiagonalWin(player)) {
-//			return true;
-//		}
+		// if (checkHorizontalWin(player)) {
+		// return true;
+		// }
+		//
+		// if (checkVerticalWin(player)) {
+		// return true;
+		// }
+		//
+		// if (checkDiagonalWin(player)) {
+		// return true;
+		// }
 		return false;
 
 	}

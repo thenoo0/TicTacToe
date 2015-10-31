@@ -43,9 +43,4 @@ public class Player {
 		this.isComputer = isComputer;
 	}
 
-	@Override
-	protected Object clone() throws CloneNotSupportedException {
-
-		return super.clone();
-	}
 }
