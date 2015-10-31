@@ -5,10 +5,10 @@ public class Player {
 	private int id;
 	private boolean isComputer;
 
-	public Player(int id, boolean isComputer) {
+	public Player(int id) {
 		super();
 		this.id = id;
-		this.isComputer = isComputer;
+		// this.isComputer = isComputer;
 	}
 
 	public Position makeMove() {
@@ -16,22 +16,13 @@ public class Player {
 		Position playerMovePosition;
 
 		// gracz lub komputer
-		if (isComputer) {
 
-			Random generator = new Random();/// musi byc jakis zakres, pewnie
-											/// trzeba bedzie jakos poprawic
-			int x = generator.nextInt();
-			int y = generator.nextInt();
-			playerMovePosition = new Position(x, y);
-		} else {
-			System.out.println("Podaj 1 wspolrzedna(x)");
-			Scanner in = new Scanner(System.in);
-			int x = in.nextInt();
-			System.out.println("Podaj 2 wspolrzedna(y)");
-			int y = in.nextInt();
-			playerMovePosition = new Position(x, y);
-			
-		}
+		System.out.println("Podaj 1 wspolrzedna(x)");
+		Scanner in = new Scanner(System.in);
+		int x = in.nextInt();
+		System.out.println("Podaj 2 wspolrzedna(y)");
+		int y = in.nextInt();
+		playerMovePosition = new Position(x, y);
 
 		return playerMovePosition;
 	}
@@ -51,10 +42,10 @@ public class Player {
 	public void setComputer(boolean isComputer) {
 		this.isComputer = isComputer;
 	}
-	
+
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		
+
 		return super.clone();
 	}
 }

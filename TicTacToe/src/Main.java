@@ -30,8 +30,11 @@ public class Main {
 		/// while(1 - rozpocznij gre, 2 - wyjscie z programu
 		// Menu();
 		GameParams gameParams = getGameParams();
-		Player p1 = new Player(1, false);
-		Player p2 = new Player(2, gameParams.isComputer);
+		Player p1 = new Player(1);
+		Player p2 = new Player(2);
+		if(gameParams.isComputer){
+		p2 = new Computer(2, gameParams);
+		}
 		Player activePlayer = p1;
 		System.out.print("active Player: ");
 		System.out.println(activePlayer.getId());
