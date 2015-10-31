@@ -11,6 +11,7 @@ public class Computer extends Player {
 
 	
 	public Position makeMove() {
+		System.out.println("Ruch komputera: ");
 		int size = gameParams.boardSize;
 		Random generator = new Random();
 		int x = generator.nextInt(size);
