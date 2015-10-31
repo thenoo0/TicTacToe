@@ -4,17 +4,8 @@ public class Board {
 	private int[][] gameBoard;
 	public int size;
 
-	public boolean setField(Player player, Position position) {////// ZWRACA
-		////// TRUE LUB
-		////// FALSE W
-		////// ZALEZNOSCI
-		////// OD TEGO
-		////// CZY KTOS
-		////// DOBRZE
-		////// ZAZNACZYL
-		////////// tutaj bedzie caly algorytm sprawdzenie czy dobrze ktos
-		////////// zaznaczyl
-		if ((position.y-1) < size && (position.x-1) < size) {
+	public boolean setField(Player player, Position position) {
+		if ((position.y-1) < size && (position.x-1) < size && (position.y-1) >= 0 && (position.x-1) >= 0) {
 
 			if (gameBoard[position.y-1][position.x-1] == 0) {
 				if (player.getId() == 1) {
