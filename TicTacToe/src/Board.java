@@ -45,17 +45,17 @@ public class Board {
 
 	public boolean isPlayerWin(Player player) {
 
-		// if (checkHorizontalWin(player)) {
-		// return true;
-		// }
-		//
-		// if (checkVerticalWin(player)) {
-		// return true;
-		// }
-		//
-		// if (checkDiagonalWin(player)) {
-		// return true;
-		// }
+		if (checkHorizontalWin(player)) {
+			return true;
+		}
+
+		if (checkVerticalWin(player)) {
+			return true;
+		}
+
+		if (checkDiagonalWin(player)) {
+			return true;
+		}
 		return false;
 
 	}
@@ -66,32 +66,34 @@ public class Board {
 
 		for (int row = 0; row < size; row++) {
 			int total = 0;
-
 			for (int col = 0; col < size; col++) {
-				total += gameBoard[row][col];
-			}
-
-			if (total % player.getId() == 0) {
-				return true;
+				if (gameBoard[row][col] == player.getId()) {
+					total++;
+					if (total == fieldsToWin) {
+						return true;
+					}
+				} else {
+					total = 0;
+				}
 			}
 		}
-
 		return false;
 	}
 
 	public boolean checkVerticalWin(Player player) {
 		for (int col = 0; col < size; col++) {
 			int total = 0;
-
 			for (int row = 0; row < size; row++) {
-				total += gameBoard[row][col];
-			}
-
-			if (total % player.getId() == 0) {
-				return true;
+				if (gameBoard[row][col] == player.getId()) {
+					total++;
+					if (total == fieldsToWin) {
+						return true;
+					}
+				} else {
+					total = 0;
+				}
 			}
 		}
-
 		return false;
 	}
 
@@ -99,22 +101,29 @@ public class Board {
 		int total = 0;
 
 		for (int lr = 0; lr < size; lr++) {
-			total += gameBoard[lr][lr];
-		}
-
-		if (total % player.getId() == 0) {
-			return true;
+			if (gameBoard[lr][lr] == player.getId()) {
+				total++;
+				if (total == fieldsToWin) {
+					return true;
+				}
+			} else {
+				total = 0;
+			}
 		}
 
 		total = 0;
 
 		for (int rl = 0; rl < size; rl++) {
-			total += gameBoard[rl][size - rl - 1];
+			//total += gameBoard[rl][size - rl - 1];
+			if (gameBoard[rl][size - rl - 1] == player.getId()) {
+				total++;
+				if (total == fieldsToWin) {
+					return true;
+				}
+			} else {
+				total = 0;
+			}
 
-		}
-
-		if (total % player.getId() == 0) {
-			return true;
 		}
 		return false;
 	}
