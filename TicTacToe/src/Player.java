@@ -29,7 +29,9 @@ public class Player {
 			int x = in.nextInt();
 			System.out.println("Podaj 2 wspolrzedna(y)");
 			int y = in.nextInt();
+			in.close();
 			playerMovePosition = new Position(x, y);
+			
 		}
 
 		return playerMovePosition;

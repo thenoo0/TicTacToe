@@ -21,6 +21,11 @@ public class Game {
 		board.printBoard();
 	}
 
+	public void endGame() {
+		board.printBoard();
+		System.out.println("Koniec gry");
+	}
+
 	public boolean makeMoveAndCheckWin(Player player) {
 		Position position = player.makeMove();
 		/// sprawdz czy wygral
@@ -32,9 +37,14 @@ public class Game {
 		return board.isPlayerWin(player);
 	}
 
-	private void changePlayers() {
-		///zmien gracza
-		///board.printBoard();
+	public void changePlayers(Player activePlayer) {
+		/// zmien gracza
+		if (activePlayer == p1) {
+			activePlayer = p2;
+		} else {
+			activePlayer = p1;
+		}
+		board.printBoard();
 	}
 
 }

@@ -22,7 +22,6 @@ public class Main {
 		int boardSize = in.nextInt();
 		System.out.println("- Podaj ilosc pol do wygrania:");
 		int fieldsToWin = in.nextInt();
-		in.close();
 		GameParams gp = new GameParams(boardSize, fieldsToWin, isComputer);
 		return gp;
 	}
@@ -37,8 +36,11 @@ public class Main {
 		Game game = new Game(activePlayer, p1, p2, gameParams);
 		game.startGame();
 
-		//// while(!makeMoveAndCheckWin(activePlayer)){ /// changePlayers }
-		System.out.println("Koniec gry");
+		while (!game.makeMoveAndCheckWin(activePlayer)) {
+			game.changePlayers(activePlayer);
+		}
+		
+		game.endGame();
 		/// koniec petli(wyjscie z petli koniec programu)
 	}
 }
