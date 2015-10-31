@@ -30,7 +30,7 @@ public class Game {
 		Position position = player.makeMove();
 		/// sprawdz czy wygral
 		while (!board.setField(player, position)) {
-			System.out.println("Wprowadzono chujowe dane");
+			System.out.println("zle dane");
 			position = player.makeMove();
 		}
 
