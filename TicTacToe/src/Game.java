@@ -13,26 +13,28 @@ public class Game {
 		this.p2 = p2;
 		this.gameParams = gameParams;
 	}
-	
-	public void startGame(){
-		///utworz tablice
-		///
+
+	public void startGame() {
+		/// utworz tablice
 		board = new Board(gameParams);
+		board.clearBoard();
+		board.printBoard();
 	}
-	
-	public boolean makeMoveAndCheckWin(Player player){
+
+	public boolean makeMoveAndCheckWin(Player player) {
 		Position position = player.makeMove();
-		///sprawdz czy wygral
-		while(!board.setField(player, position)){
+		/// sprawdz czy wygral
+		while (!board.setField(player, position)) {
 			System.out.println("Wprowadzono chujowe dane");
 			position = player.makeMove();
 		}
-		
-        return board.isPlayerWin(player);
+
+		return board.isPlayerWin(player);
 	}
-	
-	private void changePlayers(){
-		
+
+	private void changePlayers() {
+		///zmien gracza
+		///board.printBoard();
 	}
-	
+
 }
