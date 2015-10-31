@@ -26,7 +26,7 @@ public class Main {
 		return gp;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CloneNotSupportedException {
 		/// while(1 - rozpocznij gre, 2 - wyjscie z programu
 		// Menu();
 		GameParams gameParams = getGameParams();
@@ -38,8 +38,8 @@ public class Main {
 		Game game = new Game(activePlayer, p1, p2, gameParams);
 		game.startGame();
 
-		while (!game.makeMoveAndCheckWin(activePlayer)) {
-			game.changePlayers(activePlayer);
+		while (!game.makeMoveAndCheckWin(game.activePlayer)) {
+			game.changePlayers(game.activePlayer);
 		}
 		
 		game.endGame();

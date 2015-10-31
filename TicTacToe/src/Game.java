@@ -39,11 +39,11 @@ public class Game {
 
 	public void changePlayers(Player activePlayer) {
 		/// zmien gracza
-		if(activePlayer == p1){
-			activePlayer = p2;
+		if(activePlayer == this.p1){
+			this.activePlayer = this.p2;
 		}
 		else{
-			activePlayer = p1;
+			this.activePlayer = this.p1;
 		}
 		board.printBoard();
 	}
