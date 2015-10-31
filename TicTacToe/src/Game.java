@@ -3,7 +3,7 @@ public class Game {
 	Board board;
 	Player p1;
 	Player p2;
-	private Player activePlayer=p1;
+	Player activePlayer;
 	GameParams gameParams;
 
 	public Game(Player activePlayer, Player p1, Player p2, GameParams gameParams) {
