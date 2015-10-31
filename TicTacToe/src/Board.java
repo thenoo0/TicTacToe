@@ -14,14 +14,14 @@ public class Board {
 		////// ZAZNACZYL
 		////////// tutaj bedzie caly algorytm sprawdzenie czy dobrze ktos
 		////////// zaznaczyl
-		if (position.x < size && position.y < size) {
+		if ((position.y-1) < size && (position.x-1) < size) {
 
-			if (gameBoard[position.x][position.y] == 0) {
+			if (gameBoard[position.y-1][position.x-1] == 0) {
 				if (player.getId() == 1) {
-					gameBoard[position.x][position.y] = 1;
+					gameBoard[position.y-1][position.x-1] = 1;
 					return true;
 				} else {
-					gameBoard[position.x][position.y] = 2;
+					gameBoard[position.y-1][position.x-1] = 2;
 					return true;
 				}
 			}
