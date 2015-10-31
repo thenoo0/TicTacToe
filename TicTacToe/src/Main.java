@@ -38,7 +38,7 @@ public class Main {
 		//game.startGame();
 		//activePlayer = p1 ????
 		//
-		////while(makeMoveAndCheckWin(activePlayer)){ ///  changePlayers }
+		////while(!makeMoveAndCheckWin(activePlayer)){ ///  changePlayers }
 		System.out.println("Koniec gry");
 		///koniec petli(wyjscie z petli koniec programu)
 	}
