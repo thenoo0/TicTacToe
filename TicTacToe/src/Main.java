@@ -33,6 +33,8 @@ public class Main {
 		Player p1 = new Player(1, false);
 		Player p2 = new Player(2, gameParams.isComputer);
 		Player activePlayer = p1;
+		System.out.print("active Player: ");
+		System.out.println(activePlayer.getId());
 		Game game = new Game(activePlayer, p1, p2, gameParams);
 		game.startGame();
 

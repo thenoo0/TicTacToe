@@ -41,17 +41,17 @@ public class Board {
 
 	public boolean isPlayerWin(Player player) {
 
-		if (checkHorizontalWin(player)) {
-			return true;
-		}
-
-		if (checkVerticalWin(player)) {
-			return true;
-		}
-
-		if (checkDiagonalWin(player)) {
-			return true;
-		}
+//		if (checkHorizontalWin(player)) {
+//			return true;
+//		}
+//
+//		if (checkVerticalWin(player)) {
+//			return true;
+//		}
+//
+//		if (checkDiagonalWin(player)) {
+//			return true;
+//		}
 		return false;
 
 	}
