@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Game {
 	Board board;
@@ -19,11 +20,18 @@ public class Game {
 		board = new Board(gameParams);
 		board.clearBoard();
 		board.printBoard();
+		while (!makeMoveAndCheckWin(this.activePlayer)) {
+			changePlayers(this.activePlayer);
+		}
 	}
 
 	public void endGame() {
 		board.printBoard();
-		System.out.println("Koniec gry");
+		System.out.println("-------------------");
+		System.out.println("Koniec gry!");
+		System.out.println("WYNIKI:");
+		System.out.println("Wygrywa gracz: " + this.activePlayer.getId() + "!");
+		System.out.println("-------------------");
 	}
 
 	public boolean makeMoveAndCheckWin(Player player) {
@@ -39,10 +47,9 @@ public class Game {
 
 	public void changePlayers(Player activePlayer) {
 		/// zmien gracza
-		if(activePlayer == this.p1){
+		if (activePlayer == this.p1) {
 			this.activePlayer = this.p2;
-		}
-		else{
+		} else {
 			this.activePlayer = this.p1;
 		}
 		board.printBoard();

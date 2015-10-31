@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class Player {
@@ -8,19 +7,16 @@ public class Player {
 	public Player(int id) {
 		super();
 		this.id = id;
-		// this.isComputer = isComputer;
 	}
 
 	public Position makeMove() {
 		System.out.println("Gracz:" + id + ", zaznacz pole.");
 		Position playerMovePosition;
 
-		// gracz lub komputer
-
-		System.out.println("Podaj 1 wspolrzedna(x)");
+		System.out.println("Podaj 1 wspó³rzedn¹(x)");
 		Scanner in = new Scanner(System.in);
 		int x = in.nextInt();
-		System.out.println("Podaj 2 wspolrzedna(y)");
+		System.out.println("Podaj 2 wspó³rzedn¹(y)");
 		int y = in.nextInt();
 		playerMovePosition = new Position(x, y);
 
