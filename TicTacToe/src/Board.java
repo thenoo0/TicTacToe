@@ -71,20 +71,61 @@ public class Board {
 		return false;
 	}
 
-	public boolean checkVerticalWin(Player player) {
-		for (int col = 0; col < size; col++) {
-			int total = 0;
-			for (int row = 0; row < size; row++) {
-				if (gameBoard[row][col] == player.getId()) {
-					total++;
-					if (total == fieldsToWin) {
-						return true;
-					}
-				} else {
-					total = 0;
-				}
-			}
+	public boolean checkDiagonalWin(Player player) {
+		int total=0;
+		//w prawo
+		for( int i=0;i<size;i++){
+			if(gameBoard[i][i]==player.getId()){
+				total++;
+				if(total==fieldsToWin)
+					return true;
+			}else total=0;
 		}
+		
+		for( int i=0;i+1<size;i++){
+				if(gameBoard[i][i+1]==player.getId()){
+					total++;
+					if(total==fieldsToWin)
+						return true;
+				}else total=0;
+		}
+		
+		
+		for( int i=0;i+1<size;i++){
+			if(gameBoard[i][i]==player.getId()){
+				total++;
+				if(total==fieldsToWin)
+					return true;
+			}else total=0;
+		}
+		
+		
+		// w lewo
+		for( int i=0;i<size;i++){
+			if(gameBoard[i][size-i-1]==player.getId()){
+				total++;
+				if(total==fieldsToWin)
+					return true;
+			}else total=0;
+		}
+		
+		for( int i=0;i+1<size;i++){
+			if(gameBoard[i][size-i-2]==player.getId()){
+				total++;
+				if(total==fieldsToWin)
+					return true;
+			}else total=0;
+		}
+		
+		
+		for( int i=0;i+1<size;i++){
+			if(gameBoard[size-i-2][i]==player.getId()){
+				total++;
+				if(total==fieldsToWin)
+					return true;
+			}else total=0;
+		}
+		
 		return false;
 	}
 
